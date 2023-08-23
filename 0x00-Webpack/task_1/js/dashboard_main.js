@@ -1,9 +1,9 @@
-import $ from "jquery";
-import debounce from "lodash/debounce";
+import $ from 'jquery';
+import debounce from 'lodash/debounce';
 
 $(document).ready(() => {
-  const countElement = $("#count");
-  const buttonElement = $("#clickButton");
+  const countElement = $('#count');
+  const buttonElement = $('#clickButton');
 
   let count = 0;
 
@@ -14,5 +14,5 @@ $(document).ready(() => {
 
   const debouncedUpdateCounter = debounce(updateCounter, 300);
 
-  buttonElement.on("click", debouncedUpdateCounter);
+  buttonElement.on('click', debouncedUpdateCounter);
 });
