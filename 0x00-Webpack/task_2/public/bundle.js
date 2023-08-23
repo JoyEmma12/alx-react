@@ -9,6 +9,17 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
+/***/ "./js/dashboard_main.js":
+/*!******************************!*\
+  !*** ./js/dashboard_main.js ***!
+  \******************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/debounce */ \"./node_modules/lodash/debounce.js\");\n/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(() => {\n  const countElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"#count\");\n  const buttonElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"#clickButton\");\n\n  let count = 0;\n\n  const updateCounter = () => {\n    count++;\n    countElement.text(`${count} clicks on the button`);\n  };\n\n  const debouncedUpdateCounter = lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(updateCounter, 300);\n\n  buttonElement.on(\"click\", debouncedUpdateCounter);\n});\n\n\n//# sourceURL=webpack://task_2/./js/dashboard_main.js?");
+
+/***/ }),
+
 /***/ "./node_modules/jquery/dist/jquery.js":
 /*!********************************************!*\
   !*** ./node_modules/jquery/dist/jquery.js ***!
@@ -157,17 +168,6 @@ eval("var root = __webpack_require__(/*! ./_root */ \"./node_modules/lodash/_roo
 
 eval("var baseTrim = __webpack_require__(/*! ./_baseTrim */ \"./node_modules/lodash/_baseTrim.js\"),\n    isObject = __webpack_require__(/*! ./isObject */ \"./node_modules/lodash/isObject.js\"),\n    isSymbol = __webpack_require__(/*! ./isSymbol */ \"./node_modules/lodash/isSymbol.js\");\n\n/** Used as references for various `Number` constants. */\nvar NAN = 0 / 0;\n\n/** Used to detect bad signed hexadecimal string values. */\nvar reIsBadHex = /^[-+]0x[0-9a-f]+$/i;\n\n/** Used to detect binary string values. */\nvar reIsBinary = /^0b[01]+$/i;\n\n/** Used to detect octal string values. */\nvar reIsOctal = /^0o[0-7]+$/i;\n\n/** Built-in method references without a dependency on `root`. */\nvar freeParseInt = parseInt;\n\n/**\n * Converts `value` to a number.\n *\n * @static\n * @memberOf _\n * @since 4.0.0\n * @category Lang\n * @param {*} value The value to process.\n * @returns {number} Returns the number.\n * @example\n *\n * _.toNumber(3.2);\n * // => 3.2\n *\n * _.toNumber(Number.MIN_VALUE);\n * // => 5e-324\n *\n * _.toNumber(Infinity);\n * // => Infinity\n *\n * _.toNumber('3.2');\n * // => 3.2\n */\nfunction toNumber(value) {\n  if (typeof value == 'number') {\n    return value;\n  }\n  if (isSymbol(value)) {\n    return NAN;\n  }\n  if (isObject(value)) {\n    var other = typeof value.valueOf == 'function' ? value.valueOf() : value;\n    value = isObject(other) ? (other + '') : other;\n  }\n  if (typeof value != 'string') {\n    return value === 0 ? value : +value;\n  }\n  value = baseTrim(value);\n  var isBinary = reIsBinary.test(value);\n  return (isBinary || reIsOctal.test(value))\n    ? freeParseInt(value.slice(2), isBinary ? 2 : 8)\n    : (reIsBadHex.test(value) ? NAN : +value);\n}\n\nmodule.exports = toNumber;\n\n\n//# sourceURL=webpack://task_2/./node_modules/lodash/toNumber.js?");
 
-/***/ }),
-
-/***/ "./src/js/dashboard_main.js":
-/*!**********************************!*\
-  !*** ./src/js/dashboard_main.js ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! jquery */ \"./node_modules/jquery/dist/jquery.js\");\n/* harmony import */ var jquery__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(jquery__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! lodash/debounce */ \"./node_modules/lodash/debounce.js\");\n/* harmony import */ var lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(lodash_debounce__WEBPACK_IMPORTED_MODULE_1__);\n\n\n\n\njquery__WEBPACK_IMPORTED_MODULE_0___default()(document).ready(() => {\n  const countElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"#count\");\n  const buttonElement = jquery__WEBPACK_IMPORTED_MODULE_0___default()(\"#clickButton\");\n\n  let count = 0;\n\n  const updateCounter = () => {\n    count++;\n    countElement.text(`${count} clicks on the button`);\n  };\n\n  const debouncedUpdateCounter = lodash_debounce__WEBPACK_IMPORTED_MODULE_1___default()(updateCounter, 300);\n\n  buttonElement.on(\"click\", debouncedUpdateCounter);\n});\n\n\n//# sourceURL=webpack://task_2/./src/js/dashboard_main.js?");
-
 /***/ })
 
 /******/ 	});
@@ -254,7 +254,7 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var jque
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/dashboard_main.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./js/dashboard_main.js");
 /******/ 	
 /******/ })()
 ;
