@@ -3,12 +3,8 @@
   font-weight: bold;
   margin-left: 10px;
 }
-#clickButton {
-  display: inline-block;
-}
 #logo {
   width: 200px;
   height: 200px;
-  background-image: url("../assets/holberton-logo.jpg") no-repeat center/200px
-    200px;
+  background-image: url("../assets/holberton-logo.jpg");
 }
