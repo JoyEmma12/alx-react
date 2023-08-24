@@ -1,31 +1,23 @@
-import $ from "jquery";
-import css from "../css/main.css";
-import debounce from "lodash/debounce"; // Import the debounce function from Lodash
+const $ = require("jquery");
+// Load the full build
+const _ = require("lodash");
+import "../css/main.css";
 
-$(document).ready(function () {
-  // Add Paragraph Elements
-  $("body").append("<p>Holberton Dashboard</p>");
-  $("body").append("<p>Dashboard data for the students</p>");
+let count = 0;
 
-  // Add Button Element
-  $("body").append('<button id="click">Click here to get started</button>');
+function updateCounter() {
+  count++;
+  $("#count").text(`${count} clicks on the button`);
+}
 
-  // Add Paragraph Element for Count
-  $("body").append('<p id="count"></p>');
+const $button = $("<button>Click here to get started</button>").on(
+  "click",
+  _.debounce(updateCounter, 500, { leading: true, trailing: false })
+);
 
-  // Add Another Paragraph
-  $("body").append("<p>Copyright - Holberton School</p>");
-
-  // Add updateCounter function
-  let count = 0;
-
-  function updateCounter() {
-    count += 1;
-    $("#count").text(`${count} clicks on the button`);
-  }
-
-  // Add click event handler using debounce
-  const debouncedUpdateCounter = _.debounce(updateCounter, 300); // Debounce for 300 milliseconds
-
-  $("#click").on("click", debouncedUpdateCounter);
-});
+$("body").append("<div id='logo'></div>");
+$("body").append("<p>Holberton Dashboard</p>");
+$("body").append("<p>Dashboard data for the students</p>");
+$("body").append($button);
+$("body").append("<p id='count'></p>");
+$("body").append("<p>Copyright - Holberton School</p>");
