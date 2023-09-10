@@ -20,34 +20,27 @@ class App extends Component {
     { id: 2, name: "Webpack", credit: 20 },
     { id: 3, name: "React", credit: 40 },
   ];
-
   listNotifications = [
-    { id: 2, type: "default", value: "New course available", html: null },
-    { id: 3, type: "urgent", value: "New resume available", html: null },
-    {
-      id: 4,
-      type: "urgent",
-      value: null,
-      html: { __html: getLatestNotification() },
-    },
+    { id: 1, type: "default", value: "New course available" },
+    { id: 2, type: "urgent", value: "New resume available" },
+    { id: 3, type: "urgent", html: getLatestNotification() },
   ];
   render() {
     return (
-      <div>
-        <Notifications
-          displayDrawer={true}
-          listNotifications={this.listNotifications}
-        />
+      <React.Fragment>
         <div className="App">
-          <Header />
-          {this.state.isLoggedIn ? (
+          <div className="heading-section">
+            <Notifications listNotifications={this.listNotifications} />
+            <Header />
+          </div>
+          {this.props.isLoggedIn ? (
             <CourseList listCourses={this.listCourses} />
           ) : (
             <Login />
           )}
           <Footer />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
