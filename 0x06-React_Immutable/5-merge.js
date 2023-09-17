@@ -1,5 +1,5 @@
-import { List } from "immutable";
-import { Map } from "immutable";
+import { List } from 'immutable';
+import { Map } from 'immutable';
 
 export default function concatElements(page1, page2) {
   return List(page1).concat(List(page2));
