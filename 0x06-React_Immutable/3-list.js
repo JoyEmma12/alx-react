@@ -1,6 +1,6 @@
-import { Map } from "immutable";
-import { FromJSArray } from "immutable";
-import { List } from "immutable";
+import { Map } from 'immutable';
+import { FromJSArray } from 'immutable';
+import { List } from 'immutable';
 
 export function getListObject(array) {
   return List(array);

@@ -1,5 +1,5 @@
-import { List, Map, fromJS } from "immutable";
-import { FromJS } from "immutable";
+import { List, Map, fromJS } from 'immutable';
+import { FromJS } from 'immutable';
 
 export default function accessImmutableObject(object, array) {
   const accessImmutable = fromJS(object);
