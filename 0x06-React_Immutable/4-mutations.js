@@ -12,5 +12,5 @@ export default function maps1() {
 };
 
 export default function maps2(object2) {
-    const map2 = map.withMutations(object2).set(2, 'Benjamin').set(4, 'Oliver');
+    const map2 = maps1.withMutations(object2).set(2, 'Benjamin').set(4, 'Oliver');
 }
