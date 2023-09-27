@@ -1,0 +1,25 @@
+.App-header {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  color: #e0354b;
+  border-bottom: 3px solid #e0354b;
+}
+.App-logo {
+  width: 300px;
+  height: 300px;
+}
+h1 {
+  margin-top: 100px;
+}
+.App-body {
+  margin: 50px;
+  font-weight: 300;
+  height: 50%;
+}
+.App-footer {
+  border-top: 3px solid #e0354b;
+  text-align: center;
+  padding: 30px;
+  font-style: italic;
+}
